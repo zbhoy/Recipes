@@ -1,0 +1,405 @@
+/* ==========================================================================
+   Neobrutalism theme for the Cooklang recipe site.
+   Based on the Neobrutalism Starter Kit: thick ink borders, hard offset
+   shadows, flat saturated color, heavy type. Primary: #88D498.
+   Loaded AFTER output.css so these rules win. Re-apply after each rebuild
+   via post_build.py (see ~/workspace/recipe-site).
+   ========================================================================== */
+
+:root {
+  --bg: #FFF9F0;
+  --surface: #FFFFFF;
+  --surface-sunk: #FFF1D6;
+  --border: #161616;
+  --border-strong: #161616;
+  --text: #161616;
+  --text-muted: #3d3d3d;
+  --text-faint: #5c5c5c;
+  --accent: #1E7A46;
+  --accent-strong: #14532D;
+  --accent-soft: #DDF3E4;
+  --accent-text: #14532D;
+  --accent-ink: #161616;
+  --ok: #1E7A46;
+  --ok-soft: #DDF3E4;
+  --danger: #D63B3B;
+  --danger-soft: #FFE1E1;
+  --danger-ink: #161616;
+  --info: #2470C7;
+  --disabled: #CFC9BE;
+  --inactive: #8A8478;
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-card: 4px 4px 0 #161616;
+  --shadow-overlay: 8px 8px 0 #161616;
+  --nb-green: #88D498;
+  --nb-coral: #FF6B6B;
+  --nb-yellow: #FFD23F;
+  --nb-sky: #74B9FF;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #17171C;
+  --surface: #1F1F26;
+  --surface-sunk: #282832;
+  --border: #F5F0E6;
+  --border-strong: #F5F0E6;
+  --text: #F5F0E6;
+  --text-muted: #CFC8BA;
+  --text-faint: #A8A193;
+  --accent: #88D498;
+  --accent-strong: #A9E7BD;
+  --accent-soft: #233A2B;
+  --accent-text: #88D498;
+  --accent-ink: #161616;
+  --ok: #88D498;
+  --ok-soft: #233A2B;
+  --danger: #FF6B6B;
+  --danger-soft: #3A2226;
+  --danger-ink: #161616;
+  --info: #74B9FF;
+  --disabled: #4A4A55;
+  --inactive: #8F8880;
+  --shadow-card: 4px 4px 0 #000000;
+  --shadow-overlay: 8px 8px 0 #000000;
+  --nb-green: #88D498;
+  --nb-coral: #FF6B6B;
+  --nb-yellow: #FFD23F;
+  --nb-sky: #74B9FF;
+}
+
+/* ---------- type ---------- */
+
+body {
+  font-family: "Archivo", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, .card-head h2, .card-head h3 {
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+/* ---------- nav ---------- */
+
+.nav-card {
+  background: var(--nb-green);
+  border: 3px solid var(--border);
+  border-radius: 0;
+  box-shadow: 5px 5px 0 var(--border);
+}
+
+.dark .nav-card {
+  background: #2E6B41;
+}
+
+.nav-card a {
+  color: #161616;
+  font-weight: 800;
+}
+
+.dark .nav-card a {
+  color: #F5F0E6;
+}
+
+.brand-mark {
+  border-radius: 0 !important;
+  border: 2px solid #161616;
+}
+
+/* ---------- cards ---------- */
+
+.card {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  box-shadow: var(--shadow-card);
+  background: var(--surface);
+}
+
+.card-head h2, .card-head h3 {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.recipe-card {
+  border: 2px solid var(--border) !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--border) !important;
+  background: var(--surface);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.recipe-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--border) !important;
+  border-color: var(--border) !important;
+}
+
+.recipe-card-icon {
+  border: 2px solid var(--border) !important;
+  border-radius: 0 !important;
+  background: var(--nb-yellow);
+  font-weight: 900;
+}
+
+/* ---------- buttons ---------- */
+
+.btn {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--border);
+  background: #FFFFFF;
+  color: #161616;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.dark .btn {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--border);
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--border);
+}
+
+.btn-primary {
+  background: var(--nb-green);
+  color: #161616;
+}
+
+.btn-primary:hover {
+  background: var(--nb-green);
+}
+
+.dark .btn-primary {
+  color: #161616;
+}
+
+.btn-danger {
+  background: var(--nb-coral);
+  color: #161616;
+}
+
+.btn-danger:hover {
+  background: var(--nb-coral);
+}
+
+.icon-btn {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  box-shadow: 2px 2px 0 var(--border);
+  background: #FFFFFF;
+  color: #161616;
+}
+
+.dark .icon-btn {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.icon-btn:hover {
+  background: var(--nb-yellow);
+  color: #161616;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--border);
+}
+
+.icon-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--border);
+}
+
+/* ---------- badges ---------- */
+
+.ingredient-badge {
+  background: var(--nb-yellow);
+  color: #161616;
+  border: 2px solid #161616;
+  border-radius: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+}
+
+.cookware-badge {
+  background: var(--nb-sky);
+  color: #161616;
+  border: 2px solid #161616;
+  border-radius: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+}
+
+/* ---------- recipe body ---------- */
+
+.step-box {
+  border: 2px solid var(--border) !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 var(--border) !important;
+  background: var(--surface);
+}
+
+.ingredient-row {
+  border: 2px solid var(--border) !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0 var(--border) !important;
+}
+
+.image-step img {
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+}
+
+/* ---------- forms / search ---------- */
+
+input[type="text"], input[type="search"], #search-input, select, textarea {
+  border: 2px solid var(--border) !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 var(--border);
+  background: #FFFFFF;
+  color: #161616;
+  font-weight: 600;
+}
+
+.dark input[type="text"], .dark input[type="search"],
+.dark #search-input, .dark select, .dark textarea {
+  background: var(--surface);
+  color: var(--text);
+}
+
+input:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 3px solid var(--border);
+  outline-offset: 2px;
+}
+
+#search-results a {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--border);
+  margin-bottom: 0.5rem;
+  background: var(--surface);
+  font-weight: 700;
+}
+
+#search-results a.search-selected {
+  background: var(--nb-yellow);
+  color: #161616;
+  box-shadow: inset 4px 0 0 #161616, 3px 3px 0 var(--border);
+}
+
+/* ---------- links ---------- */
+
+a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+a:hover {
+  text-decoration-thickness: 3px;
+}
+
+/* ---------- cooking mode overlay ---------- */
+
+.cooking-overlay {
+  background: var(--bg);
+}
+
+.cooking-card {
+  border: 3px solid var(--border);
+  border-radius: 0;
+  box-shadow: var(--shadow-overlay);
+  background: var(--surface);
+}
+
+.cooking-step-number {
+  background: var(--nb-yellow);
+  color: #161616;
+  border: 2px solid #161616;
+  border-radius: 0;
+  font-weight: 900;
+}
+
+.cooking-section-pill {
+  background: var(--nb-sky);
+  color: #161616;
+  border: 2px solid #161616;
+  border-radius: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.cooking-progress {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  background: var(--surface);
+}
+
+.cooking-progress-bar {
+  background: var(--nb-green);
+  border-right: 2px solid var(--border);
+}
+
+.cooking-mise-item {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  box-shadow: 2px 2px 0 var(--border);
+  background: var(--surface);
+}
+
+.cooking-step-image img {
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+}
+
+.cooking-close-btn, .cooking-done-close-btn {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--border);
+  background: var(--nb-coral);
+  color: #161616;
+  font-weight: 800;
+}
+
+/* ---------- timers / misc ---------- */
+
+.stepper {
+  border: 2px solid var(--border) !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0 var(--border) !important;
+}
+
+.pantry-item {
+  border: 2px solid var(--border) !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0 var(--border) !important;
+}
+
+hr, .border-t {
+  border-color: var(--border);
+}
+
+/* ---------- print: drop the heavy ink ---------- */
+
+@media print {
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
